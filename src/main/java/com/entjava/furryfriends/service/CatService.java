@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
+import com.entjava.furryfriends.model.PetType;
+
 @Service
 public class CatService {
     @Autowired
@@ -16,6 +18,7 @@ public class CatService {
     }
 
     public Cat saveCat(Cat cat) {
+        cat.setType(PetType.CAT);
         return catRepository.save(cat);
     }
 
