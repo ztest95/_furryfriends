@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
+import com.entjava.furryfriends.model.PetType;
+
 @Service
 public class HamsterService {
     @Autowired
@@ -16,6 +18,7 @@ public class HamsterService {
     }
 
     public Hamster saveHamster(Hamster hamster) {
+        hamster.setType(PetType.HAMSTER);
         return hamsterRepository.save(hamster);
     }
 
