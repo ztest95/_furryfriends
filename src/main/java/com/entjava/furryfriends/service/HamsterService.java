@@ -22,5 +22,17 @@ public class HamsterService {
     public void deleteHamster(Long id) {
         hamsterRepository.deleteById(id);
     }
+
+    public Hamster updateHamster(Long id, Hamster hamster) {
+        Hamster hamsterToUpdate = hamsterRepository.findById(id).get();
+        // Pet Class
+        hamsterToUpdate.setName(hamster.getName());
+        hamsterToUpdate.setAge(hamster.getAge());
+        // Hamster Class
+        hamsterToUpdate.setColor(hamster.getColor());
+        hamsterToUpdate.setIsCute(hamster.getIsCute());
+        
+        return hamsterRepository.save(hamsterToUpdate);
+    }
 }
 

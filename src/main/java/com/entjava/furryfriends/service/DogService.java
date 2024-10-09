@@ -22,5 +22,17 @@ public class DogService {
     public void deleteDog(Long id) {
         dogRepository.deleteById(id);
     }
+
+    public Dog updateDog(Long id, Dog dog) {
+        Dog dogToUpdate = dogRepository.findById(id).get();
+        // Pet Class
+        dogToUpdate.setName(dog.getName());
+        dogToUpdate.setAge(dog.getAge());
+        // Dog Class
+        dogToUpdate.setBreed(dog.getBreed());
+        dogToUpdate.setTrained(dog.getTrained());
+
+        return dogRepository.save(dogToUpdate);
+    }
 }
 

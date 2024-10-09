@@ -29,5 +29,10 @@ public class HamsterController {
     public void deleteHamster(@PathVariable Long id) {
         hamsterService.deleteHamster(id);
     }
+
+    @PatchMapping("/{id}")
+    public Hamster updateHamster(@PathVariable Long id, @RequestBody Hamster hamster) {
+        return hamsterService.updateHamster(id, hamster);
+    }
 }
 

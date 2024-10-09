@@ -22,5 +22,17 @@ public class BirdService {
     public void deleteBird(Long id) {
         birdRepository.deleteById(id);
     }
+
+    public Bird updateBird(Long id, Bird bird) {
+        Bird birdToUpdate = birdRepository.findById(id).get();
+        // Pet Class
+        birdToUpdate.setName(bird.getName());
+        birdToUpdate.setAge(bird.getAge());
+        // Bird Class
+        birdToUpdate.setColor(bird.getColor());
+        birdToUpdate.setCanFly(bird.getCanFly());
+        
+        return birdRepository.save(birdToUpdate);
+    }
 }
 

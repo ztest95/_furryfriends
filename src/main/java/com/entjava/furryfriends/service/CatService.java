@@ -22,5 +22,17 @@ public class CatService {
     public void deleteCat(Long id) {
         catRepository.deleteById(id);
     }
+
+    public Cat updateCat(Long id, Cat cat) {
+        Cat catToUpdate = catRepository.findById(id).get();
+        // Pet Class
+        catToUpdate.setName(cat.getName());
+        catToUpdate.setAge(cat.getAge());
+        // Cat Class
+        catToUpdate.setColor(cat.getColor());
+        catToUpdate.setIndoor(cat.getIndoor());
+        
+        return catRepository.save(catToUpdate);
+    }
 }
 

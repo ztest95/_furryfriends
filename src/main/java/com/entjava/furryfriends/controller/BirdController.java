@@ -29,5 +29,11 @@ public class BirdController {
     public void deleteBird(@PathVariable Long id) {
         birdService.deleteBird(id);
     }
+
+    @PatchMapping("/{id}")
+    public Bird updateBird(@PathVariable Long id, @RequestBody Bird bird) {
+        return birdService.updateBird(id, bird);
+    }
+    
 }
 
