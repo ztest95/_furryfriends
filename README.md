@@ -24,21 +24,12 @@ The Furry Friends API is a Spring Boot application designed to manage pets, spec
     ```http
     GET /pets
     ```
-    or 
-    ```http
-    GET /{type}
-    ```
 
 - **Get** a Pet by ID
     ```http
     GET /pets/{id}
     ```
-    or 
-    ```http
-    GET /{type}/{id}
-    ```
-> ![TIP]
-> There are four types of pet types `{type}` that can be used: cats, dogs, hamsters, and birds
+
 
 - **Create** a Pet
     ```http
