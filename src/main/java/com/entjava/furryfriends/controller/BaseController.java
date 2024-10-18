@@ -2,10 +2,10 @@ package com.entjava.furryfriends.controller;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
+// import org.springframework.web.bind.annotation.PostMapping;
+// import org.springframework.web.bind.annotation.RequestBody;
+// import org.springframework.web.bind.annotation.DeleteMapping;
+// import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -23,11 +23,11 @@ import com.entjava.furryfriends.service.HamsterService;
 import com.entjava.furryfriends.service.BirdService;
 import com.entjava.furryfriends.service.PetService;
 
-import com.entjava.furryfriends.model.Cat;
-import com.entjava.furryfriends.model.Dog;
-import com.entjava.furryfriends.model.Hamster;
-import com.entjava.furryfriends.model.Bird;
-import com.entjava.furryfriends.model.Pet;
+// import com.entjava.furryfriends.model.Cat;
+// import com.entjava.furryfriends.model.Dog;
+// import com.entjava.furryfriends.model.Hamster;
+// import com.entjava.furryfriends.model.Bird;
+// import com.entjava.furryfriends.model.Pet;
 
 @RestController
 public class BaseController {
