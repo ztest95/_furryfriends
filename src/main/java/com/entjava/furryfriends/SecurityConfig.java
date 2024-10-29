@@ -11,6 +11,10 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 @Configuration
 public class SecurityConfig {
 
@@ -27,12 +31,24 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
+        List<UserDetails> users = new ArrayList<>();
+
+
         UserDetails user = User
                 .withDefaultPasswordEncoder() // Not recommended for production, use BCrypt or another encoder
                 .username("user")
                 .password("password")
                 .roles("USER")
                 .build();
+
+        UserDetails user2 = User
+                .withDefaultPasswordEncoder() // Not recommended for production, use BCrypt or another encoder
+                .username("admin")
+                .password("password")
+                .roles("ADMIN")
+                .build();
+                
+        users.add(user);
 
         return new InMemoryUserDetailsManager(user);
     }
